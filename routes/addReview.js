@@ -8,7 +8,7 @@ function get(request, response) {
         <form method="POST">
 
             <label for="username">Username</label>
-            <input name="user" type="text" aria-label="Insert your name here" required>
+            <input name="username" type="text" aria-label="Insert your name here" required>
 
             <label for="book_title">Book Title</label>
             <input name="title" type="text" aria-label="Insert Book Title here" required>
@@ -17,7 +17,7 @@ function get(request, response) {
             <input name="author" type="text" aria-label="Insert Book Author here" required>
         
             <label for="book_review">Book Review</label>
-            <textarea name="review" rows="4" cols="50" required></textarea>
+            <textarea name="textcontent" rows="4" cols="50" required></textarea>
 
             <p>Book Rating</p>
             <div>
@@ -30,7 +30,7 @@ function get(request, response) {
                 <label for="rating-2">2</label>
 
                  <input type="radio" 
-                name="rating-3" value="3">
+                name="rating" value="3">
                 <label for="rating-3">3</label>
 
                 <input type="radio" 
@@ -49,4 +49,21 @@ function get(request, response) {
   response.send(html);
 }
 
-module.exports = { get };
+function post(request, response) {
+  let newReview = request.body;
+  console.log(newReview.username, newReview.title);
+  db.query(
+    "INSERT INTO reviews (username, title, author, rating, textcontent) VALUES ($1, $2, $3, $4, $5)",
+    [
+      newReview.username,
+      newReview.title,
+      newReview.author,
+      newReview.rating,
+      newReview.textcontent,
+    ]
+  ).then(() => {
+    response.redirect("/");
+  });
+}
+
+module.exports = { get, post };
