@@ -28,6 +28,7 @@ function get(request, response) {
       `
         <h1>Written Tomatoes Reviews</h1>
         <div>${allReviews.join("")}</div>
+        <a href="/write-review">Write a new review</a>
     `
     );
 
