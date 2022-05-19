@@ -26,7 +26,7 @@ function get(request, response) {
         <p>${tomatoRating(review.rating)}</p>
         <p>${review.textcontent}</p>
       </div>
-        <p class ="book_feedback">${review.textcontent}</p>
+
       
       </li>
       `;
