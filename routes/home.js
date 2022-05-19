@@ -1,6 +1,14 @@
 const db = require("../database/connection.js");
 const layout = require("../layout.js");
 
+function tomatoRating(rating) {
+  let returnString = "";
+  for (let i = 0; i < rating; i++) {
+    returnString += "🍅";
+  }
+  return returnString;
+}
+
 function get(request, response) {
   db.query("SELECT * FROM reviews").then((result) => {
     const reviewsObjects = result.rows;
@@ -10,7 +18,7 @@ function get(request, response) {
         <h2>${review.username}</h2>
         <h3>${review.title}</h3>
         <h4>${review.author}</h4>
-        <p>${review.rating}</p>
+        <p>${tomatoRating(review.rating)}</p>
         <p>${review.textcontent}</p>
       </div>
       `;
