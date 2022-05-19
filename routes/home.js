@@ -6,20 +6,26 @@ function get(request, response) {
     const reviewsObjects = result.rows;
     const allReviews = reviewsObjects.map((review) => {
       return `
-      <div>
+      <li class ="review">
+      <div class ="username">
         <h2>${review.username}</h2>
-        <h3>${review.title}</h3>
-        <h4>${review.author}</h4>
-        <p>${review.rating}</p>
-        <p>${review.textcontent}</p>
+
+            <div class ="head_post" >
+              <h3>${review.title}</h3>
+              <h4>${review.author}</h4>
+              <div>${review.rating}</div>
+            </div>
       </div>
+        <p class ="book_feedback">${review.textcontent}</p>
+      
+      </li>
       `;
     });
     const html = layout(
       "Written Tomatoes",
       `
         <h1>Written Tomatoes Reviews</h1>
-        <div>${allReviews.join("")}</div>
+        <ul class="wrap">${allReviews.join("")}</ul>
     `
     );
 
