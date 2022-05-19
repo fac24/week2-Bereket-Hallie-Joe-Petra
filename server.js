@@ -6,8 +6,10 @@ const addReview = require("./routes/addReview.js");
 const server = express();
 
 const bodyHandler = express.urlencoded({ extended: false });
+const staticHandler = express.static("public");
 
 server.use(bodyHandler);
+server.use(staticHandler);
 
 server.get("/", home.get);
 server.get("/write-review", addReview.get);
