@@ -16,12 +16,11 @@ function get(request, response) {
       return `
       <li class ="review">
       <div class ="username">
-        <h2>${review.username}</h2>
+        <h4>${review.username}</h4>
 
-
-            <div class ="head_post" >
-              <h3>${review.title}</h3>
-              <h4>${review.author}</h4>
+            <div class ="head_post">
+              <h2>${review.title}</h2>
+              <h3>${review.author}</h3>
               <div>${tomatoRating(review.rating)}</div>
             </div>
 
