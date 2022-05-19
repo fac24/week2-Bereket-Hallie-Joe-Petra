@@ -17,9 +17,9 @@ function get(request, response) {
     });
     const html = layout(
       "Written Tomatoes",
-      /*html*/ `
+      `
         <h1>Written Tomatoes Reviews</h1>
-        <div>${allReviews}</div>
+        <div>${allReviews.join("")}</div>
     `
     );
 
