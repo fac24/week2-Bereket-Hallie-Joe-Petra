@@ -8,14 +8,8 @@ const server = express();
 const bodyHandler = express.urlencoded({ extended: false });
 const staticHandler = express.static("public");
 
-const staticHandler = express.static("public");
-
 server.use(bodyHandler);
-<<<<<<< HEAD
 server.use(staticHandler);
-=======
-server.use(staticHandler); 
->>>>>>> styling
 
 server.get("/", home.get);
 server.get("/write-review", addReview.get);

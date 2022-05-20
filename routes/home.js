@@ -20,13 +20,13 @@ function get(request, response) {
 
 
             <div class ="head_post" >
-              <h3>${review.title}</h3>
-              <h4>${review.author}</h4>
+              <h2>${review.title}</h2>
+              <h3>${review.author}</h3>
               <div>${tomatoRating(review.rating)}</div>
             </div>
 
       </div>
-        <p class ="book_feedback">${review.textcontent}</p>
+            <p class ="book_feedback">${review.textcontent}</p>
       
       </li>
       `;
