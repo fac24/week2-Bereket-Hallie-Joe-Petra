@@ -17,7 +17,7 @@
 body {
     color:#303C6C;
     background-color: var(--light);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Lucida Sans', sans-serif;
     font-weight: 600;
     list-style: none;
 }
@@ -57,6 +57,7 @@ li {
 }
  /* username + title + author + rating container */
 .username {
+    
     background-color: var(--orange);
     color: var(--blue);
     margin-top: auto;
@@ -64,9 +65,8 @@ li {
 
 /* text-area with review */
 .book_feedback{
-    background-color: var(--yellow);
-    background-size: cover;
-    
+    background-color: var(--light);
+    background-size: cover;   
 }
 
 h1 {
@@ -76,7 +76,7 @@ h1 {
 .name {
     display: block;
     font-size: 1.15em;
-    margin-block-start: 1em;
+    margin-block-start: 1.5em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
@@ -86,6 +86,7 @@ h1 {
 
 h2 {
     margin-bottom: 1rem;
+    font-style: italic;
 }
 
 h2, h3 {
