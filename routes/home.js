@@ -17,7 +17,7 @@ function get(request, response) {
         return `
       <li class ="review">
       <div class ="username">
-        <h2>${review.username}</h2>
+        <p class="name">${review.username}</p>
 
 
             <div class ="head_post" >
@@ -27,7 +27,9 @@ function get(request, response) {
             </div>
 
       </div>
-            <p class ="book_feedback">${review.textcontent}</p>
+            <div class ="book_feedback">
+              <p>${review.textcontent}</p>
+            </div>
       
       </li>
       `;
