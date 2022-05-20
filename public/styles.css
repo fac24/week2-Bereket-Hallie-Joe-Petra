@@ -15,10 +15,16 @@
 
 body {
   color: #303c6c;
+  background-image: url("https://media.istockphoto.com/photos/cherry-tomatoes-and-halves-are-flying-on-a-white-background-isolated-picture-id1333250753?b=1&k=20&m=1333250753&s=170667a&w=0&h=kUcN-F6XA1QgcAMViMB93MUExqt8JuFtrcb8qDNrmB8=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  backdrop-filter: blur(10px);
   background-color: var(--light);
   font-family: "Lucida Sans", sans-serif;
   font-weight: 600;
   list-style: none;
+  margin-bottom: 0;
 }
 
 li {
@@ -39,10 +45,12 @@ li {
 
 /* li class */
 .review {
+  background-color: var(--green);
   list-style: none;
-  border: 3px solid var(--orange);
-  border-radius: 10px;
+  border: 3px solid var(--blue);
+  border-radius: 8px;
   flex: 1 1 200px;
+  padding: 1rem;
 }
 
 /* title + author + rating */
@@ -52,18 +60,30 @@ li {
   background-size: cover;
   padding: 1rem;
   color: var(--blue);
+  height: 25vh;
+  resize: both;
 }
 /* username + title + author + rating container */
 .username {
   background-color: var(--orange);
   color: var(--blue);
   margin-top: auto;
+  border-radius: 3px;
+  border: 3px solid var(--blue);
 }
 
 /* text-area with review */
 .book_feedback {
-  background-color: var(--light);
+  background-color: var(--yellow);
   background-size: cover;
+  height: 15vh;
+  margin-top: 1em;
+  border-radius: 3px;
+  border: 3px solid var(--blue);
+}
+p {
+  margin-top: 1.5em;
+  margin-left: 1em;
 }
 
 h1 {
@@ -200,4 +220,20 @@ h3 {
     width: 100%;
     padding: 5%;
   }
+}
+
+/* link styling */
+a {
+  color: var(--blue);
+  font-family: "Lucida Sans", sans-serif;
+  font-style: italic;
+  font-size: 25px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+a:hover {
+  transform: scale(1.1);
 }
