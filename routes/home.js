@@ -10,10 +10,11 @@ function tomatoRating(rating) {
 }
 
 function get(request, response) {
-  db.query("SELECT * FROM reviews").then((result) => {
-    const reviewsObjects = result.rows;
-    const allReviews = reviewsObjects.map((review) => {
-      return `
+  db.query("SELECT * FROM reviews")
+    .then((result) => {
+      const reviewsObjects = result.rows;
+      const allReviews = reviewsObjects.map((review) => {
+        return `
       <li class ="review">
       <div class ="username">
         <h2>${review.username}</h2>
@@ -30,20 +31,24 @@ function get(request, response) {
       
       </li>
       `;
-    });
-    const html = layout(
-      "Written Tomatoes",
-      `
+      });
+      const html = layout(
+        "Written Tomatoes",
+        `
         <h1>Written Tomatoes Reviews</h1>
 
         <ul class="wrap">${allReviews.join("")}</ul>
         <a href="/write-review">Write a new review</a>
 
     `
-    );
+      );
 
-    response.send(html);
-  });
+      response.send(html);
+    })
+    .catch((error) => {
+      console.error(error);
+      response.send("<h1>Sorry, there was an error</h1>");
+    });
 }
 
 module.exports = { get };
