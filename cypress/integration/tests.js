@@ -28,3 +28,7 @@ it("can fill out and submit the form and redirect to root route", () => {
   cy.visit("/");
   cy.contains("Harry Potter and the Philosopher's Stone");
 });
+
+after(() => {
+  cy.task("resetDb");
+});
