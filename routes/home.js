@@ -26,7 +26,9 @@ function get(request, response) {
             </div>
 
       </div>
-            <p class ="book_feedback">${review.textcontent}</p>
+            <div class ="book_feedback">
+              <p>${review.textcontent}</p>
+            </div>
       
       </li>
       `;
