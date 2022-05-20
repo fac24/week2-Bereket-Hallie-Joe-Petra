@@ -18,14 +18,15 @@ function get(request, response) {
       <div class ="username">
         <p class="name">${review.username}</p>
 
-            <div class ="head_post">
+
+            <div class ="head_post" >
               <h2>${review.title}</h2>
               <h3>${review.author}</h3>
               <div>${tomatoRating(review.rating)}</div>
             </div>
 
       </div>
-        <p class ="book_feedback">${review.textcontent}</p>
+            <p class ="book_feedback">${review.textcontent}</p>
       
       </li>
       `;
