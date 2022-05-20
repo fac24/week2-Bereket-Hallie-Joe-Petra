@@ -4,44 +4,64 @@ const layout = require("../layout.js");
 function get(request, response) {
   const html = layout(
     "Write a book review | Written Tomatoes",
-    `<div>
-        <form method="POST">
+    `
+    <h1>Write a review!</h1>
+    <div id="form-container">
+        <form method="POST" id="form">
+            <div id="column1">
 
-            <label for="username">Username</label>
-            <input name="username" type="text" aria-label="Insert your name here" required>
-
-            <label for="book_title">Book Title</label>
-            <input name="title" type="text" aria-label="Insert Book Title here" required>
+            <label for="book_title" class="form-label">Book Title</label>
+            <input name="title" type="text"  class="form-input" aria-label="Insert Book Title here" required>
         
-            <label for="book_author">Book Author</label>
-            <input name="author" type="text" aria-label="Insert Book Author here" required>
-        
-            <label for="book_review">Book Review</label>
-            <textarea name="textcontent" rows="4" cols="50" required></textarea>
+            <label for="book_author" class="form-label">Book Author</label>
+            <input name="author" type="text"  class="form-input" aria-label="Insert Book Author here" required>
 
-            <p>Book Rating</p>
-            <div>
+            <label for="username" class="form-label">Username</label>
+            <input name="username" type="text" class="form-input" aria-label="Insert your name here" required>
+            </div>
+
+      
+          
+            <div id="column2">
+
+            <p class="rating-label">Rating</p>
+            <div id="rating-tomatoes">
+              <div>
                 <input type="radio" 
-                name="rating" value="1">
-                <label for="rating-1">1</label>
-
+                name="rating" value="1" >
+                <label for="rating-1">🍅</label>
+                </div>
+                
+                <div>
                 <input type="radio"
                 name="rating" value="2">
-                <label for="rating-2">2</label>
-
+                <label for="rating-2">🍅 🍅</label>
+                </div>
+            
+                <div>
                  <input type="radio" 
                 name="rating" value="3">
-                <label for="rating-3">3</label>
+                <label for="rating-3">🍅 🍅 🍅</label>
+                </div>
 
+                <div>
                 <input type="radio" 
                 name="rating" value="4">
-                <label for="rating-4">4</label>
+                <label for="rating-4">🍅 🍅 🍅 🍅</label>
+                </div>
 
+                <div>
                 <input type="radio" 
                 name="rating" value="5">
-                <label for="rating-5">5</label>
+                <label for="rating-5">🍅 🍅 🍅 🍅 🍅</label>
+                </div>
             </div>
-            <button type="submit">Add Review</button>
+
+            <label for="book_review" class="rating-label">Review</label>
+            <textarea name="textcontent"  id="review-text" required></textarea>
+
+            <button type="submit" id="submit-btn">Add Review</button>
+            </div>
         </form>
         </div>
         `
