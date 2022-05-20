@@ -61,9 +61,14 @@ function post(request, response) {
       newReview.rating,
       newReview.textcontent,
     ]
-  ).then(() => {
-    response.redirect("/");
-  });
+  )
+    .then(() => {
+      response.redirect("/");
+    })
+    .catch((error) => {
+      console.error(error);
+      response.send("<h1>Sorry, there was an error</h1>");
+    });
 }
 
 module.exports = { get, post };
