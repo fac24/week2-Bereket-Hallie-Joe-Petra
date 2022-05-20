@@ -46,6 +46,10 @@ function get(request, response) {
       response.send(html);
     })
     .catch((error) => {
+      // Catch any DB errors so the server doesn't crash.
+      // Users probably can't affect the SELECT query above, so this is more about general
+      // safeguarding against some unexpected DB problem, or our own coding mistakes
+      // (e.g. "SELECT * FROM blah", where the "blah" table doesn't exist).
       console.error(error);
       response.send("<h1>Sorry, there was an error</h1>");
     });

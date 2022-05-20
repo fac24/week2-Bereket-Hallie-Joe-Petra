@@ -66,6 +66,9 @@ function post(request, response) {
       response.redirect("/");
     })
     .catch((error) => {
+      // Catch any DB errors so the server doesn't crash.
+      // e.g. the user could enter a username longer than 255 chars, etc.
+      // (Client-side validation can't stop this.)
       console.error(error);
       response.send("<h1>Sorry, there was an error</h1>");
     });
