@@ -53,7 +53,7 @@ li {
     background-size: cover;
     padding: 1rem;
     color: var(--blue);
-    /* text-shadow: 1px 1px 8px rgba(0,0,0,0.5); */
+    
 }
  /* username + title + author + rating container */
 .username {
@@ -67,15 +67,13 @@ li {
     background-color: var(--yellow);
     background-size: cover;
     
-    /* padding: 1rem; */
-    
 }
 
 h1 {
-text-align: center;
+   text-align: center;
 }
 
-h4 {
+.name {
     display: block;
     font-size: 1.15em;
     margin-block-start: 1em;

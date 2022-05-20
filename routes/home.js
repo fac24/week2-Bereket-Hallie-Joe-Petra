@@ -16,7 +16,7 @@ function get(request, response) {
       return `
       <li class ="review">
       <div class ="username">
-        <h4>${review.username}</h4>
+        <p class="name">${review.username}</p>
 
             <div class ="head_post">
               <h2>${review.title}</h2>
